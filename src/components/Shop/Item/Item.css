@@ -1,0 +1,16 @@
+.Item{
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+  color: aliceblue;
+  border-radius: 10px;
+  background-color: rgb(32, 32, 32, 0.568);
+  text-align: center;
+}
+
+img{
+  width: 360px;
+  height: auto;
+  border-radius: 10px;
+}

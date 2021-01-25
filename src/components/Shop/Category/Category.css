@@ -1,0 +1,36 @@
+.category{
+  border-radius: 40px;
+  background-color: rgb(32, 32, 32, 0.568);
+  position: absolute;
+  top: 80px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  height: calc(100% - 160px);
+  overflow-y: auto;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.category div{
+  padding: 40px;
+  margin: 10px;
+  color: aliceblue;
+}
+
+.category h2{
+  text-align: center;
+}
+
+.category img{
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+}

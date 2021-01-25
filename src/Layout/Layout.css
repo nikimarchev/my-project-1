@@ -1,0 +1,4 @@
+main {
+  height: calc(100% - (80px + 53px));
+  overflow-y: auto;
+}

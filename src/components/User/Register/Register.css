@@ -1,0 +1,23 @@
+.registerForm{
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  right: 250px;
+  border: 20px;
+}
+
+.registerForm input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.registerForm label {
+  font-size: 20px;
+}
+
+.registerForm button{
+  width: 150px;
+  height: 50px;
+}

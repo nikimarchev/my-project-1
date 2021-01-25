@@ -1,0 +1,31 @@
+.loginForm{
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  right: 250px;
+  border: 20px;
+  border-radius: 40px;
+}
+
+.loginForm input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.loginForm label {
+  font-size: 20px;
+}
+
+.loginForm button{
+  width: 150px;
+  height: 50px;
+}
+
+.redirect{
+  text-decoration: none;
+  background-color:white;
+  color: black;
+  padding: 15px 30px;
+}

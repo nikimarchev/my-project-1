@@ -1,0 +1,40 @@
+.whole{
+  display: flex;
+  flex-direction:column;
+  height: calc(100% - 160px);
+  overflow-y: auto;
+}
+
+.list{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  color: aliceblue;
+  list-style: none;
+  border-radius: 40px;
+  background-color: rgb(32, 32, 32, 0.568);
+  padding-top: 170px;
+  padding-bottom: 170px;
+  position: absolute;
+  top: 160px;
+  left: 0;
+  right: 0;
+}
+
+.list li{
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.list img{
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.whole h1{
+  text-align: center;
+  color:azure;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
+}
