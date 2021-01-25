@@ -8,7 +8,7 @@ const Category = () => {
       <NavLink to="/turbos" className="link">
         <div>
           <h2>Turbos</h2>
-          <img src="https://puredieselpower.com/image/cache/catalog/product/60/0000305_towing-twin-turbos-for-cummins-2003-2007-500x500.jpeg" alt="img" />
+          <img src="https://race-shop.bg/125425-large_default/turbo-garrett-gtx3582r-gen-ii-851154-5004s-super-core.jpg" alt="img" />
         </div>
       </NavLink>
       <NavLink to="/headers" className="link">
