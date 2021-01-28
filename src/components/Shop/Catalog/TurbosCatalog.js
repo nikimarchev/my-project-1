@@ -1,45 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import './Catalog.css'
 import Item from '../Item/Item'
 
 const TurbosCatalog = () => {
+  const HOST = 'http://localhost:3000';
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios.get(`${HOST}/data/turbosData.json`)
+      .then(response => {
+        setData(response.data);
+      })
+  }, [])
+
   return (
-    <ul className="catalog">
-      <h1>TURBOS</h1>
-      <li>
-        <Item
-          className="item"
-          img="https://www.garrettmotion.com/wp-content/uploads/2020/02/Garrett_Performance_G_Series_G57_Turbocharger.jpg"
-          description="Supports up to 3000 horsepower"
-          price="12700">
-          Garrett G-Series G57-3000
-          </Item>
-      </li>
-      <li>
-        <Item
-          img="https://www.garrettmotion.com/wp-content/uploads/2020/02/Garrett_Performance_G_Series_G57_Turbocharger.jpg"
-          description="38mm TURBOCHARGER"
-          price="1800">
-          Garrett GT2052 Turbocharger
-          </Item>
-      </li>
-      <li>
-        <Item
-          img="https://www.garrettmotion.com/wp-content/uploads/2019/02/GTX4709-GTX5009-Gen-II-quarter.jpg"
-          description="76mm AND 80mm TURBOCHARGER"
-          price="1800">
-          Garrett GTX5009R GEN II Turbocharger
-          </Item>
-      </li>
-      <li>
-        <Item
-          img="https://www.garrettmotion.com/wp-content/uploads/2019/02/GTX4709-GTX5009-Gen-II-quarter.jpg"
-          description="76mm AND 80mm TURBOCHARGER"
-          price="1800">
-          Garrett GTX5009R GEN II Turbocharger
-          </Item>
-      </li>
-    </ul>
+    <>
+      <h1 className="type">TURBOS</h1>
+      <ul className="catalog">
+        {
+          data.map(item => (
+            <li key={item.img}>
+              <Item
+                className="item"
+                img={item.img}
+                description={item.description}
+                price={item.price}>
+                {item.name}
+              </Item>
+            </li>
+          ))
+        }
+      </ul >
+    </>
   )
 }
 

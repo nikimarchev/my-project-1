@@ -17,7 +17,7 @@ const Service = () => {
         <li>
           <img src="https://finetunedautos.ca/wp-content/uploads/2019/01/Transmission-Repair-Service.png" alt="img" />
         Transmission
-        </li>
+      </li>
         <li>
           <img src="https://reliable-auto.com/wp-content/uploads/2019/10/car-suspension.jpg" alt="img" />
         Suspension

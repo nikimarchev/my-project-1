@@ -1,0 +1,20 @@
+[
+  {
+    "img": "https://www.garrettmotion.com/wp-content/uploads/2020/02/Garrett_Performance_G_Series_G57_Turbocharger.jpg",
+    "description": "Supports up to 3000 horsepower",
+    "price": "12700",
+    "name": "Garrett G-Series G57-3000"
+  },
+  {
+    "img": "https://www.garrettmotion.com/wp-content/uploads/2020/02/Garrett_Performance_G_Series_G57_Turbocharger.jpg",
+    "description": "38mm TURBOCHARGER",
+    "price": "1800",
+    "name": "Garrett GT2052 Turbocharger"
+  },
+  {
+    "img": "https://www.garrettmotion.com/wp-content/uploads/2019/02/GTX4709-GTX5009-Gen-II-quarter.jpg",
+    "description": "76mm AND 80mm TURBOCHARGER",
+    "price": "2100",
+    "name": "Garrett GTX5009R GEN II Turbocharger"
+  }
+]
