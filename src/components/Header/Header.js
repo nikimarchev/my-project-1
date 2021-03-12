@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div>
       <ul className="header" >
-        <NavLink to="/" className="mainPage" onClick={hideNav}>qCar- Services for cars</NavLink>
+        <NavLink to="/" className="mainPage" onClick={hideNav}>qCar- Services for vehicles</NavLink>
         <button className="buttons" onClick={() => setNavOpen(open => !open)}>Shop & Service</button>
         {isAuthenticated && <NavLink to="/cart" className="cart" onClick={hideNav}>Cart</NavLink>}
         {
