@@ -8,26 +8,18 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const isAuthenticated = useSelector(state => state.auth.token !== null);
-
-  const dispatch = useDispatch();
-  const login = (email, password) => dispatch(actions.login(email, password))
-
   const history = useHistory();
-
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
+  const dispatch = useDispatch();
+  const login = (email, password) => dispatch(actions.login(email, password));
   const submitHandler = event => {
     event.preventDefault();
-    login(email, password);
-  }
-
-  let authRedirect;
-  if (isAuthenticated) {
-    authRedirect = <Redirect to='/' />
+    login(email, password)
   }
 
   return (
     <div className='loginForm'>
-      {authRedirect}
+      {isAuthenticated && <Redirect to='/' />}
       <h1>LOGIN</h1>
       <form onSubmit={submitHandler}  >
         <label>

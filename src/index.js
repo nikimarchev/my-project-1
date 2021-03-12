@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import authReducer from './store/reducers/auth'
-
+import rootReducer from './store/reducers'
 
 let composeEnhancers = null;
 if (process.env.NODE_ENV === 'development') {
@@ -16,11 +14,6 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   composeEnhancers = compose;
 }
-
-
-const rootReducer = combineReducers({
-  auth: authReducer
-})
 
 const store = createStore(rootReducer, composeEnhancers(
   applyMiddleware(thunk)

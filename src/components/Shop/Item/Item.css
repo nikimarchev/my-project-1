@@ -8,9 +8,24 @@
   background-color: rgb(32, 32, 32, 0.568);
   text-align: center;
 }
-
 img{
   width: 360px;
   height: auto;
   border-radius: 10px;
+}
+.Item h3{
+  font-size: 27px;
+}
+.Item div{
+  font-size: larger;
+}
+.Item button {
+  font-size: 18px;
+  padding: 10px 25px;
+  transition-duration: 0.3s;
+  border-radius: 10px;
+}
+.Item button:hover {
+  background-color:rgb(77, 77, 77);
+  color: white;
 }

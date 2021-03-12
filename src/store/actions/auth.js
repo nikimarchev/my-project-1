@@ -47,7 +47,7 @@ export const register = (email, password) => {
         dispatch(registerSuccess(true))
       })
       .catch(err => {
-        console.log(err);
+        alert(err.response.data.error.message.split('_').join(' '));
       })
   }
 }
@@ -72,7 +72,7 @@ export const login = (email, password) => {
         dispatch(checkAuthTimeout(response.data.expiresIn));
       })
       .catch(err => {
-        console.log(err);
+        alert(err.response.data.error.message.split('_').join(' '));
       })
   }
 }

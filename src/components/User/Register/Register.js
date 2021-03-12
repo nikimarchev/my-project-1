@@ -9,21 +9,16 @@ const Register = () => {
   const [password, setPassword] = useState('');
 
   const isRegistered = useSelector(state => state.auth.isReg);
-
   const dispatch = useDispatch();
   const register = (email, password) => dispatch(actions.register(email, password));
-
   const submitHandler = event => {
     event.preventDefault();
     register(email, password);
   }
 
-  if (isRegistered) {
-    <Redirect to='/login' />
-  }
-
   return (
     <div className='registerForm'>
+      {isRegistered && <Redirect to='/login' />}
       <h1>REGISTER</h1>
       <form onSubmit={submitHandler}  >
         <label>

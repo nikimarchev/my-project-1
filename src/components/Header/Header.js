@@ -8,40 +8,38 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const isAuthenticated = useSelector(state => state.auth.token !== null);
 
+  let history = useHistory();
   const dispatch = useDispatch();
-  const logout = (email, password) => dispatch(actions.logout(email, password));
+  const logout = (email, password) => {
+    history.push('/')
+    dispatch(actions.logout(email, password))
+  };
 
   const hideNav = () => {
     setNavOpen(false);
-  }
-
-  let history = useHistory();
-  let button;
-  if (isAuthenticated) {
-    button = <button className="buttons" onClick={logout}>Logout</button>
-  } else {
-    button = <button className="buttons" onClick={() => history.push('/login')}>Login</button>
-  }
-
-  let navigation;
-  if (navOpen) {
-    navigation =
-      <div className="navContainer" >
-        <ul className="navigation">
-          <NavLink to="/category" className="navigationItem" onClick={hideNav}>Tuning parts</NavLink>
-          <NavLink to="/service" className="navigationItem" onClick={hideNav}>Service</NavLink>
-        </ul>
-      </div >
   }
 
   return (
     <div>
       <ul className="header" >
         <NavLink to="/" className="mainPage" onClick={hideNav}>qCar- Services for cars</NavLink>
-        <button className="buttons" onClick={() => setNavOpen(open => !open)}>Services we provide</button>
-        {button}
+        <button className="buttons" onClick={() => setNavOpen(open => !open)}>Shop & Service</button>
+        {isAuthenticated && <NavLink to="/cart" className="cart" onClick={hideNav}>Cart</NavLink>}
+        {
+          isAuthenticated ?
+            <button className="buttons" onClick={logout}>Logout</button>
+            : <button className="buttons" onClick={() => history.push('/login')}>Login</button>
+        }
       </ul>
-      {navigation}
+      {
+        navOpen &&
+        <div className="navContainer" >
+          <ul className="navigation">
+            <NavLink to="/category" className="navigationItem" onClick={hideNav}>Tuning parts</NavLink>
+            <NavLink to="/service" className="navigationItem" onClick={hideNav}>Service</NavLink>
+          </ul>
+        </div >
+      }
     </div>
   )
 }
