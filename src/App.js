@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import './App.css';
 import { useDispatch } from 'react-redux'
-import * as actions from './store/actions/auth'
+import { authCheckState } from './store/actions/auth'
+import { getProducts } from './store/actions/products'
 import { Switch, BrowserRouter, Route, Redirect } from 'react-router-dom'
 import Layout from './Layout/Layout'
 import MainPage from './components/MainPage/MainPage'
@@ -17,9 +18,11 @@ import Register from './components/User/Register/Register'
 
 const App = () => {
   const dispatch = useDispatch();
-  const authCheck = () => dispatch(actions.authCheckState());
+  const authCheck = () => dispatch(authCheckState());
+  const getProd = () => dispatch(getProducts());
   useEffect(() => {
     authCheck()
+    getProd()
   }, [])
 
   return (

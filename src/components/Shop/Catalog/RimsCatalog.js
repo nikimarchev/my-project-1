@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import './Catalog.css'
 import Item from '../Item/Item'
 
 const RimsCatalog = () => {
-  const HOST = 'http://localhost:3000';
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios.get(`${HOST}/data/rimsData.json`)
-      .then(response => {
-        setData(response.data);
-      })
-  }, [])
+  const data = useSelector(state => state.products.filter(({ category }) => category === 'rims'))
 
   return (
     <>

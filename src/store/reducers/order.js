@@ -1,13 +1,9 @@
-const initialState = {
-  items: []
-}
-
-const orderReducer = (state = initialState, action) => {
+const orderReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
-      return { items: [...state.items, action.item] };
+      return [...state, action.item];
     case 'REMOVE_FROM_CART':
-      return { items: state.items.filter(item => item.name !== action.name) };
+      return state.filter(item => item.name !== action.name);
     default:
       return state;
   }

@@ -5,7 +5,7 @@ import ItemCart from './ItemCart'
 
 const Cart = () => {
   const token = localStorage.getItem('token');
-  const items = useSelector(state => state.order.items);
+  const items = useSelector(state => state.order);
   const list = items.map(item => (
     <li key={item.img}>
       <ItemCart
