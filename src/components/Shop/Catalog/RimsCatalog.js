@@ -22,10 +22,10 @@ const RimsCatalog = () => {
             <li key={item.img}>
               <Item
                 className="item"
+                name={item.name}
                 img={item.img}
                 description={item.description}
                 price={item.price}>
-                {item.name}
               </Item>
             </li>
           ))

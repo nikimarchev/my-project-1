@@ -13,6 +13,9 @@ img{
   height: auto;
   border-radius: 10px;
 }
+.shouldLogin{
+  color: rgba(255, 0, 0, 0.712);
+}
 .Item h3{
   font-size: 27px;
 }
