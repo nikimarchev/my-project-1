@@ -18,16 +18,28 @@ const Cart = () => {
     </li>
   ))
 
+  const totalPrice = items.reduce((acc, p) => acc + +p.price, 0);
+
   return (
     <>
       {
         token ?
           <div className="uselessDiv">
             <h1 className="type">CART</h1>
-            <div className="container">
-              {items.length > 0 ? list : <p className="empty">EMPTY CART</p>}
-            </div>
-            {items.length > 0 && <button className="checkout">CHECKOUT</button>}
+            {
+              items.length > 0 ?
+                <ul className="container">
+                  {list}
+                </ul>
+                : <p className="empty">EMPTY CART</p>
+            }
+            {
+              items.length > 0 &&
+              <div className="checkoutDiv">
+                <button className="checkout">CHECKOUT</button>
+                <p className="totalPrice">Total price: {totalPrice}лв.</p>
+              </div>
+            }
           </div>
           : <p className="empty">YOU SHOULD BE AUTHENTICATED</p>
       }
