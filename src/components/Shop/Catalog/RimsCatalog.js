@@ -12,14 +12,11 @@ const RimsCatalog = () => {
       <ul className="catalog">
         {
           data.map(item => (
-            <li key={item.img}>
+            <li key={item.id}>
               <Item
                 className="item"
-                name={item.name}
-                img={item.img}
-                description={item.description}
-                price={item.price}>
-              </Item>
+                item={item}
+              />
             </li>
           ))
         }

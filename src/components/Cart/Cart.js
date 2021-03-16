@@ -5,20 +5,18 @@ import ItemCart from './ItemCart'
 
 const Cart = () => {
   const token = localStorage.getItem('token');
-  const items = useSelector(state => state.order);
+  const cart = useSelector(state => state.cart);
+  const items = useSelector(state => state.products.filter(({ id }) => state.cart[id]));
+  
+  const totalPrice = items.reduce((acc, p) => acc + +p.price * cart[p.id], 0);
   const list = items.map(item => (
-    <li key={item.img}>
+    <li key={item.id}>
       <ItemCart
         className="item"
-        name={item.name}
-        img={item.img}
-        description={item.description}
-        price={item.price}>
-      </ItemCart>
+        item={item}
+      />
     </li>
   ))
-
-  const totalPrice = items.reduce((acc, p) => acc + +p.price, 0);
 
   return (
     <>
